@@ -79,15 +79,6 @@ jobs:
           repository: aliyun/ossutil
           ref: ${{ env.version }}
 
-      - name: Cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.cache
-            ~/go/pkg/mod
-          key: ${{ runner.os }}-build-${{ github.sha }}
-          restore-keys: ${{ runner.os }}-build-
-
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
